@@ -1,8 +1,12 @@
+require 'sass'
 require 'sinatra'
 require 'slim'
-require 'sass'
 
-get('/styles.css'){ scss :styles }
+set :views, Proc.new { File.join(root, "/views") }
+
+get '/styles.css' do
+  scss :styles
+end
 
 get '/' do
   slim :home
