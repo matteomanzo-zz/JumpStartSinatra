@@ -11,4 +11,5 @@ class Song
  property :length, Integer
  property :released_on, Date
 end
+
 DataMapper.finalize
