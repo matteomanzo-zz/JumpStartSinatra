@@ -1,6 +1,7 @@
 require 'sass'
 require 'sinatra'
 require 'slim'
+require './song'
 
 set :views, Proc.new { File.join(root, "/views") }
 
@@ -19,6 +20,11 @@ end
 
 get '/contact' do
   slim :contact
+end
+
+get '/songs' do
+  @songs = Song.all
+  slim :songs
 end
 
 not_found do
