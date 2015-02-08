@@ -13,7 +13,7 @@ get '/' do
   slim :home
 end
 
-get '/about' do 
+get '/about' do
   @title = "All About This Website"
   slim :about
 end
@@ -25,6 +25,10 @@ end
 get '/songs' do
   @songs = Song.all
   slim :songs
+end
+get '/songs/:id' do
+  @song = Song.get(params[:id])
+  slim :show_song
 end
 
 not_found do
