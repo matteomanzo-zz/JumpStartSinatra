@@ -37,6 +37,11 @@ get '/songs/:id' do
   slim :show_song
 end
 
+post '/songs' do
+  song = Song.create(params[:song])
+  redirect to("/songs/#{song.id}")
+end
+
 not_found do
   slim :not_found
 end
