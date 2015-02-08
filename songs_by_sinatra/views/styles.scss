@@ -14,9 +14,9 @@ h1 {
 
 header h1 {
   font-size: 40px;
-  line-heigth: 123px;
+  line-height: 123px;
   background: transparent url(/images/mi.png) 0 0 no-repeat;
-  padding-left: 90px;
+  padding-left: 8%;
 }
 
 @mixin tabs ($background: blue, $color: yellow) {
