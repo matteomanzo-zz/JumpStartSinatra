@@ -54,6 +54,11 @@ put '/songs/:id' do
   redirect to("songs/#{song.id}")
 end
 
+delete '/songs/:id' do
+  Song.get(params[:id]).destroy
+  redirect to('/songs')
+end
+
 not_found do
   slim :not_found
 end
