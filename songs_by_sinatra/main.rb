@@ -13,6 +13,7 @@ get '/' do
   slim :home
 end
 
+
 get '/about' do
   @title = "All About This Website"
   slim :about
@@ -40,6 +41,17 @@ end
 post '/songs' do
   song = Song.create(params[:song])
   redirect to("/songs/#{song.id}")
+end
+
+get '/songs/:id/edit' do
+  @song = Song.get(params[:id])
+  slim :edit_song
+end
+
+put '/songs/:id' do
+  song = Song.get(params[:id])
+  song.update(params[:song])
+  redirect to("songs/#{song.id}")
 end
 
 not_found do
