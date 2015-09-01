@@ -1,4 +1,4 @@
-Jump start, Sinatra!
+Jump on, Sinatra!
 ==================
 
 This repository contains the project from the Jump Start Sinatra book, wich is a very good book to start if you're new to Sinatra.
